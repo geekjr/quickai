@@ -1,3 +1,3 @@
-from quickai import quickai
+from quickai import train_cnn_eb
 
-quickai.train_cnn_vgg16("./train", "cars")
+train_cnn_eb("./train", "cars", eb_type=0) # Change type for type of EB
