@@ -314,7 +314,6 @@ class ImageClassification:
             prediction_layer
         ])
 
-
         if self.data_augmentation:
             data_augmentation = Sequential(
                 [
