@@ -9,6 +9,9 @@ architectures(such as EfficientNet), were doing amazing things. However, when I 
 to problems that I wanted to solve, I realized that it was not super easy to implement and quickly experiment with these
 architectures. That is where QuickAI came in. It allows for easy experimentation of many model architectures quickly.
 
+### Dependencies:
+Tensorflow, PyTorch, and Hugging face Transformers
+
 ### The following models are currently supported:
 
 1. #### Image Classification
