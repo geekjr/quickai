@@ -10,7 +10,15 @@ to problems that I wanted to solve, I realized that it was not super easy to imp
 architectures. That is where QuickAI came in. It allows for easy experimentation of many model architectures quickly.
 
 ### Dependencies:
-Tensorflow, PyTorch, and Hugging face Transformers
+
+Tensorflow, PyTorch, and Hugging Face Transformers
+
+### Why you should use QuickAI
+
+QuickAI can reduce what would take tens of lines of code into 1-2 lines. This makes fast experimentation very easy and
+clean. For example, if you wanted to train EfficientNet on your own dataset, you would have to manually write the data
+loading, preprocessing, model definition and training code, which would be many lines of code. Whereas, with QuickAI,
+all of these steps happens automatically with just 1-2 lines of code.
 
 ### The following models are currently supported:
 
@@ -42,6 +50,10 @@ Tensorflow, PyTorch, and Hugging face Transformers
     * Distill BERT Uncased(Masking & Named Entity Recognition, Inference)
     * Distil BART (Summarization, Inference)
     * Distill BERT Uncased(Sentiment Analysis & Text/Token Classification, Inference and Fine Tuning)
+
+### Installation
+
+`pip install quickAI`
 
 ### How to use
 
