@@ -1,3 +1,4 @@
 from quickai import gpt_neo
 
-gpt_neo("Hello", "2.7B")
+text = gpt_neo("Hello", "2.7B")
+print(text)
