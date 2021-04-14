@@ -1,0 +1,4 @@
+tensorflow
+torch
+torchvision
+git+https://github.com/huggingface/transformers
