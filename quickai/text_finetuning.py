@@ -26,7 +26,7 @@ class TextFineTuning:
         for label_dir in self.classes:
             for text_file in (split_dir / label_dir).iterdir():
                 texts.append(text_file.read_text(encoding="utf8"))
-                labels.append(0 if label_dir is "neg" else 1)
+                labels.append(0 if label_dir == "neg" else 1)
 
         return texts, labels
 
