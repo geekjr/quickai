@@ -1,3 +1,7 @@
+"""
+RUN: python predictions.py
+"""
+
 from quickai import ImageClassificationPredictor
 
 predictions = ImageClassificationPredictor(
