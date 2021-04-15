@@ -1,3 +1,7 @@
+"""
+RUN: python automl.py
+"""
+
 from quickai import ImageClassification
 
 models = [

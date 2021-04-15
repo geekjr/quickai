@@ -1,3 +1,8 @@
+"""
+from quickai import ImageClassification
+"""
+
+import pathlib
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
 import tensorflow as tf
 from tensorflow.keras import layers
@@ -5,11 +10,14 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.losses import sparse_categorical_crossentropy
 import matplotlib.pyplot as plt
-import pathlib
 import numpy as np
 
 
 class ImageClassification:
+    """
+    Method use is default
+    """
+
     def __init__(
             self,
             model,
@@ -35,6 +43,13 @@ class ImageClassification:
             img_width,
             batch_size,
             grayscale=False):
+        """
+            :param grayscale: Grayscale or not
+            :param path is path to data
+            :param img_width
+            :param img_height are dims of image
+            :param batch_size is batch size
+        """
         data_dir = pathlib.Path(path)
         if grayscale:
             color_mode = "grayscale"
@@ -60,14 +75,16 @@ class ImageClassification:
         )
         class_names = train_ds.class_names
         print(class_names)
-        AUTOTUNE = tf.data.experimental.AUTOTUNE
-        train_ds = train_ds.cache().shuffle(1000).prefetch(buffer_size=AUTOTUNE)
-        val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)
+        autotune = tf.data.experimental.AUTOTUNE
+        train_ds = train_ds.cache().shuffle(1000).prefetch(buffer_size=autotune)
+        val_ds = val_ds.cache().prefetch(buffer_size=autotune)
 
         return train_ds, val_ds, len(class_names)
 
     def use(self):
-        global train, val, body, class_num, grayscale, img_size
+        """
+        self.use()
+        """
         if self.model == "eb0":
             img_size = 224
             train, val, class_num = self.load_img_data(
@@ -349,6 +366,9 @@ class ImageClassification:
 
 
 class ImageClassificationPredictor:
+    """
+    from quickai import ImageClassificationPredictor
+    """
     def __init__(self, save, size, path, classes):
         self.save = save
         self.size = size
@@ -357,6 +377,9 @@ class ImageClassificationPredictor:
         self.pred()
 
     def pred(self):
+        """
+        self.pred()
+        """
         model = tf.keras.models.load_model(f"{self.save}.h5")
         sunflower_path = pathlib.Path(self.path)
 
