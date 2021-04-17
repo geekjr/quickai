@@ -11,7 +11,7 @@ architectures. That is where QuickAI came in. It allows for easy experimentation
 
 ### Dependencies:
 
-Tensorflow, PyTorch, and Hugging Face Transformers. If you have a GPU, you should install TensorFlow and PyTorch with GPU support following the instructions from their respective websites. 
+Tensorflow, PyTorch, Sklearn, Matplotlib, Numpy, and Hugging Face Transformers. If you have a GPU, you should install TensorFlow and PyTorch with GPU support following the instructions from their respective websites. 
 
 ### Why you should use QuickAI
 
