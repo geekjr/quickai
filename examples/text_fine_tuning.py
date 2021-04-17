@@ -9,3 +9,6 @@ TextFineTuning("./aclImdb", "./FUNCTIONTESTCLASSIFICATION", "classification", ["
 
 TextFineTuning("./wnut17train.conll", "./FUNCTIONTESTTOKENCLASSIFICATION", "token_classification",
                epochs=1)  # Token Classification
+
+TextFineTuning("./squad", "./FUNCTIONTESTQA", "q+a",
+               epochs=1)  # Q+A

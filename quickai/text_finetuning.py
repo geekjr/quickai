@@ -196,9 +196,9 @@ class TextFineTuning:
 
         if self.model_type == "q+a":
             train_contexts, train_questions, train_answers = self.read_squad(
-                'squad/train-v2.0.json')
+                f"{self.path}/train-v2.0.json")
             val_contexts, val_questions, val_answers = self.read_squad(
-                'squad/dev-v2.0.json')
+                f"{self.path}/dev-v2.0.json")
 
             self.add_end_idx(train_answers, train_contexts)
             self.add_end_idx(val_answers, val_contexts)
