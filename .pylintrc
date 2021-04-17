@@ -1,4 +1,4 @@
 [MASTER]
 ignore=test,examples
 
-disable=too-many-function-args,no-member,no-self-argument,too-many-arguments,too-many-locals,missing-function-docstring,too-many-statements,too-many-branches
+disable=too-many-function-args,no-member,no-self-argument,too-many-arguments,too-many-locals,missing-function-docstring,too-many-statements,too-many-branches,missing-class-docstring,line-too-long,too-few-public-methods,consider-using-enumerate

@@ -1,3 +1,7 @@
+"""
+from quickai import TextFineTuning
+"""
+
 from pathlib import Path
 import json
 import os
