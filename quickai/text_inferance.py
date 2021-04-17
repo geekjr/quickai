@@ -1,4 +1,4 @@
-from transformers import GPTNeoForCausalLM, GPT2Tokenizer, pipeline
+from transformers import GPTNeoForCausalLM, GPT2Tokenizer, pipeline, AutoTokenizer, AutoModelForSequenceClassification
 
 
 def gpt_neo(prompt, model, max_length=100, temp=0.9):
@@ -61,3 +61,13 @@ def summarization(text, length_max, length_min):
         max_length=length_max,
         min_length=length_min,
         do_sample=False)
+
+
+def classification_ft(path, classes):
+    model = AutoModelForSequenceClassification.from_pretrained(path, from_tf=True)
+    tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')
+    classifier = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
+
+    result = classifier("I love this movie")[0]
+    out_class = result['label'].replace('LABEL_', '')
+    return [result['label'], round(result['score'], 4), classes[int(out_class)]]
