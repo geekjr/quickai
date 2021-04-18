@@ -3,4 +3,14 @@ requires = [
     "setuptools>=42",
     "wheel"
 ]
+
+install_requires = [
+        'git+https://github.com/huggingface/transformers',
+        'numpy',
+        'scikit-learn',
+        'git+https://github.com/huggingface/transformers',
+        'matplotlib',
+
+
+    ]
 build-backend = "setuptools.build_meta"
