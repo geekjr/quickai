@@ -140,3 +140,5 @@ cython_debug/
 # Testing
 
 test/
+
+.idea/
