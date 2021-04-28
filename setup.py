@@ -8,7 +8,7 @@ setuptools.setup(
     version="1.0.1",
     author="geekjr",
     author_email="author@example.com",
-    description="QuickAI is a Python AI framework that makes it extremely easy to experiment with state-of-the-art "
+    description="QuickAI is a Python framework that makes it extremely easy to experiment with state-of-the-art "
                 "Machine Learning models.",
     long_description=long_description,
     long_description_content_type="text/markdown",
