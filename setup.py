@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="quickai",  # Replace with your own username
-    version="1.0.1",
+    version="1.0.3",
     author="geekjr",
     author_email="author@example.com",
-    description="QuickAI is a Python framework that makes it extremely easy to experiment with state-of-the-art "
+    description="QuickAI is a Python library that makes it extremely easy to experiment with state-of-the-art "
                 "Machine Learning models.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -29,5 +29,5 @@ setuptools.setup(
         'numpy',
         'matplotlib',
         'transformers'
-    ],
+    ]
 )
