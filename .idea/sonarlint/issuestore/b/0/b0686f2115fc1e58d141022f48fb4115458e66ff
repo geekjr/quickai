@@ -1,10 +1,11 @@
 
-gpython:S5720J"CRename "path_to_use" to "self" or add the missing "self" parameter.(±ü²øÿÿÿÿ8ü€Ó¾/
-kpython:S930Ë"LRemove 1 unexpected arguments; 'add_end_idx' expects 1 positional arguments.(´‹È8ëùÈ¾/
-xpython:S930İ"TRemove 1 unexpected arguments; 'add_token_positions' expects 1 positional arguments.(«æö½üÿÿÿÿ8ëùÈ¾/
-^python:S5720^"?Rename "answers" to "self" or add the missing "self" parameter.(†ş­ç8ëùÈ¾/
-opython:S930Æ"KRemove 1 unexpected arguments; 'read_squad' expects 0 positional arguments.(â¯÷Ÿÿÿÿÿÿ8ÑáÒ¾/
-kpython:S930Ì"LRemove 1 unexpected arguments; 'add_end_idx' expects 1 positional arguments.(Èö‡×8ëùÈ¾/
-opython:S930È"KRemove 1 unexpected arguments; 'read_squad' expects 0 positional arguments.(àµúÿÿÿÿ8ÑáÒ¾/
-epython:S5720m"ARename "encodings" to "self" or add the missing "self" parameter.(Ã¹îØşÿÿÿÿ8ëùÈ¾/
-xpython:S930Ü"TRemove 1 unexpected arguments; 'add_token_positions' expects 1 positional arguments.(‡Šâîùÿÿÿÿ8ëùÈ¾/
+kpython:S930Ğ"LRemove 1 unexpected arguments; 'add_end_idx' expects 1 positional arguments.(Èö‡×8ëùÈ¾/
+^python:S5720b"?Rename "answers" to "self" or add the missing "self" parameter.(†ş­ç8ëùÈ¾/
+kpython:S930Ï"LRemove 1 unexpected arguments; 'add_end_idx' expects 1 positional arguments.(´‹È8ëùÈ¾/
+epython:S5720q"ARename "encodings" to "self" or add the missing "self" parameter.(Ã¹îØşÿÿÿÿ8ëùÈ¾/
+opython:S930Ê"KRemove 1 unexpected arguments; 'read_squad' expects 0 positional arguments.(â¯÷Ÿÿÿÿÿÿ8ÑáÒ¾/
+xpython:S930á"TRemove 1 unexpected arguments; 'add_token_positions' expects 1 positional arguments.(«æö½üÿÿÿÿ8ëùÈ¾/
+xpython:S930à"TRemove 1 unexpected arguments; 'add_token_positions' expects 1 positional arguments.(‡Šâîùÿÿÿÿ8ëùÈ¾/
+gpython:S5720N"CRename "path_to_use" to "self" or add the missing "self" parameter.(±ü²øÿÿÿÿ8ü€Ó¾/
+opython:S930Ì"KRemove 1 unexpected arguments; 'read_squad' expects 0 positional arguments.(àµúÿÿÿÿ8ÑáÒ¾/
+=python:S125"Remove this commented out code.(…Óµ•8Ëß¤Ì‘/
