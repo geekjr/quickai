@@ -1,4 +1,4 @@
-<span style="display:block;text-align:center">![image info](assets/quickai.png)</span>
+<span style="display:block;text-align:middle">![image info](assets/quickai.png)</span>
 ## QuickAI is a Python library that makes it extremely easy to experiment with state-of-the-art Machine Learning models.
 
 ### Motivation
