@@ -63,3 +63,7 @@ all of these steps happens automatically with just 1-2 lines of code.
 ### How to use
 
 Please see the examples folder for details. 
+
+### Issues/Questions
+
+If you encounter any bugs, please open a new issue so they can be corrected. If you have general questions, please use the discussion section. 
