@@ -4,7 +4,7 @@
 
 ## QuickAI is a Python library that makes it extremely easy to experiment with state-of-the-art Machine Learning models.
 
-Anouncement video
+Announcement video
 https://www.youtube.com/watch?v=kK46sJphjIs
 
 ### Motivation
