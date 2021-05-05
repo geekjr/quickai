@@ -1,5 +1,11 @@
-<span style="display:block;text-align:center">![image info](assets/quickai.png)</span>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/geekjr/quickai/main/assets/quickai.png" alt="QuickAI logo"/>
+</p>
+
 ## QuickAI is a Python library that makes it extremely easy to experiment with state-of-the-art Machine Learning models.
+
+Anouncement video
+https://www.youtube.com/watch?v=kK46sJphjIs
 
 ### Motivation
 
@@ -57,3 +63,7 @@ all of these steps happens automatically with just 1-2 lines of code.
 ### How to use
 
 Please see the examples folder for details. 
+
+### Issues/Questions
+
+If you encounter any bugs, please open a new issue so they can be corrected. If you have general questions, please use the discussion section. 
