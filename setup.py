@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="quickai",  # Replace with your own username
-    version="1.0.3",
+    version="1.1.0",
     author="geekjr",
     author_email="author@example.com",
     description="QuickAI is a Python library that makes it extremely easy to experiment with state-of-the-art "
@@ -22,7 +22,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     package_dir={"": "quickai"},
-    packages=setuptools.find_packages(where="src"),
+    packages=setuptools.find_packages(where="quickai"),
     python_requires=">=3.6",
     install_requires=[
         'scikit-learn',
