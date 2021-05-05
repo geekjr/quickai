@@ -22,7 +22,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     package_dir={"": "quickai"},
-    packages=setuptools.find_packages(where="src"),
+    packages=setuptools.find_packages(where="quickai"),
     python_requires=">=3.6",
     install_requires=[
         'scikit-learn',
