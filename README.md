@@ -7,6 +7,8 @@
 Announcement video
 https://www.youtube.com/watch?v=kK46sJphjIs
 
+Demo https://deepnote.com/project/QuickAI-1r_4zvlyQMa2USJrIvB-kA/%2Fnotebook.ipynb
+
 ### Motivation
 
 When I started to get into more advanced Machine Learning, I started to see how these famous neural network
