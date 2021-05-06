@@ -51,7 +51,7 @@ class ImageClassification:
             :param batch_size is batch size
         """
         data_dir = pathlib.Path(path)
-        color_mode = "greyscale" if grayscale else "rgb"
+        color_mode = "grayscale" if grayscale else "rgb"
         train_ds = tf.keras.preprocessing.image_dataset_from_directory(
             data_dir,
             validation_split=0.2,
