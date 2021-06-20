@@ -56,6 +56,10 @@ all of these steps happens automatically with just 1-2 lines of code.
     * Distil BART (Summarization, Inference)
     * Distill BERT Uncased(Sentiment Analysis & Text/Token Classification, Inference and Fine Tuning)
 
+3. #### Object Detection
+    * YOLOV4
+    * YOLOV4 Tiny
+
 ### Installation
 
 `pip install quickAI`
