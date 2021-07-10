@@ -66,7 +66,7 @@ all of these steps happens automatically with just 1-2 lines of code.
 
 ### How to use
 
-Please see the examples folder for details. 
+Please see the examples folder for details. For the YOLOV4, you can download weights from [here]()
 
 ### Issues/Questions
 
