@@ -58,14 +58,22 @@ all of these steps happens automatically with just 1-2 lines of code.
     * Distil BART (Summarization, Inference)
     * Distill BERT Uncased(Sentiment Analysis & Text/Token Classification, Inference and Fine Tuning)
 
+3. #### Object Detection
+    * YOLOV4
+    * YOLOV4 Tiny
+
 ### Installation
 
 `pip install quickAI`
 
 ### How to use
 
-Please see the examples folder for details. 
+Please see the examples folder for details. For the YOLOV4, you can download weights from [here]()
 
 ### Issues/Questions
 
 If you encounter any bugs, please open a new issue so they can be corrected. If you have general questions, please use the discussion section. 
+
+
+### Credits
+Most of the code for the YOLO implementation was taken from "The AI Guy's" [tensorflow-yolov4-tflite](https://github.com/theAIGuysCode/tensorflow-yolov4-tflite) repo. Without this, the YOLO implementation would not be possible. Thank you!
