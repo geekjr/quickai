@@ -68,7 +68,7 @@ all of these steps happens automatically with just 1-2 lines of code.
 
 ### How to use
 
-Please see the examples folder for details. For the YOLOV4, you can download weights from [here]()
+Please see the examples folder for details. For the YOLOV4, you can download weights from [here](https://github.com/geekjr/quickai/releases/download/1.3.0/checkpoints.zip)
 
 ### Issues/Questions
 
