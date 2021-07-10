@@ -21,8 +21,8 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    #packages=["quickai"],
-    packages=setuptools.find_packages(),
+    packages=["quickai", "yolo"],
+    #packages=setuptools.find_packages(),
     python_requires=">=3.6",
     install_requires=[
         'scikit-learn',
