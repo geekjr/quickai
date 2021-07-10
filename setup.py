@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="quickai",  # Replace with your own username
-    version="1.3.4",
+    version="1.3.5",
     author="geekjr",
     author_email="author@example.com",
     description="QuickAI is a Python library that makes it extremely easy to experiment with state-of-the-art "
