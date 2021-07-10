@@ -1,22 +1,25 @@
-import time
+"""
+from quickai import YOLOV4
+"""
 
+import time
+import numpy as np
+import cv2
 import tensorflow as tf
+# noinspection PyUnresolvedReferences
+from tensorflow.compat.v1 import InteractiveSession
+# noinspection PyUnresolvedReferences
+from tensorflow.compat.v1 import ConfigProto
+from PIL import Image
+from tensorflow.python.saved_model import tag_constants
+from .yolov4 import filter_boxes
+from .utils import *
+
 
 physical_devices = tf.config.experimental.list_physical_devices('GPU')
 if len(physical_devices) > 0:
     tf.config.experimental.set_memory_growth(physical_devices[0], True)
-from .utils import *
-from .yolov4 import filter_boxes
-from tensorflow.python.saved_model import tag_constants
-from PIL import Image
 
-# noinspection PyUnresolvedReferences
-from tensorflow.compat.v1 import ConfigProto
-# noinspection PyUnresolvedReferences
-from tensorflow.compat.v1 import InteractiveSession
-import cv2
-import numpy as np
-import tensorflow as tf
 
 
 class YOLOV4:
@@ -25,11 +28,21 @@ class YOLOV4:
     """
 
     def __init__(
-            self, media_type, image="kite.jpg", video="road.mp4", output_format="XVID", yolo_classes="coco.names",
+            self,
+            media_type,
+            image="kite.jpg",
+            video="road.mp4",
+            output_format="XVID",
+            yolo_classes="coco.names",
             framework="tf",
             weights="./checkpoints/yolov4-416",
-            size=416, tiny=False,
-            model="yolov4", output="./detections/", iou=0.45, score=0.25, dont_show=False):
+            size=416,
+            tiny=False,
+            model="yolov4",
+            output="./detections/",
+            iou=0.45,
+            score=0.25,
+            dont_show=False):
 
         self.video = video
         self.image = image
@@ -85,9 +98,11 @@ class YOLOV4:
             print(output_details)
             interpreter.set_tensor(input_details[0]['index'], images_data)
             interpreter.invoke()
-            pred = [interpreter.get_tensor(
-                output_details[i]['index']) for i in range(len(output_details))]
-            if self.model == 'yolov3' and self.tiny == True:
+            pred = [
+                interpreter.get_tensor(
+                    output_details[i]['index']) for i in range(
+                    len(output_details))]
+            if self.model == 'yolov3' and self.tiny:
                 boxes, pred_conf = filter_boxes(
                     pred[1], pred[0], score_threshold=0.25, input_shape=tf.constant([input_size, input_size]))
             else:
@@ -123,7 +138,7 @@ class YOLOV4:
         # allowed_classes = ['person']
 
         image = draw_bbox(original_image, pred_bbox,
-                                allowed_classes=allowed_classes)
+                          allowed_classes=allowed_classes)
 
         image = Image.fromarray(image.astype(np.uint8))
         if not self.dont_show:
@@ -156,7 +171,7 @@ class YOLOV4:
         # begin video capture
         try:
             vid = cv2.VideoCapture(int(video_path))
-        except:
+        except BaseException:
             vid = cv2.VideoCapture(video_path)
 
         out = None
@@ -187,9 +202,11 @@ class YOLOV4:
             if self.framework == 'tflite':
                 interpreter.set_tensor(input_details[0]['index'], image_data)
                 interpreter.invoke()
-                pred = [interpreter.get_tensor(
-                    output_details[i]['index']) for i in range(len(output_details))]
-                if self.model == 'yolov3' and self.tiny == True:
+                pred = [
+                    interpreter.get_tensor(
+                        output_details[i]['index']) for i in range(
+                        len(output_details))]
+                if self.model == 'yolov3' and self.tiny:
                     boxes, pred_conf = filter_boxes(pred[1], pred[0], score_threshold=0.25,
                                                     input_shape=tf.constant([input_size, input_size]))
                 else:
