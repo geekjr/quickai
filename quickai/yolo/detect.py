@@ -16,12 +16,6 @@ from .yolov4 import filter_boxes
 from .utils import *
 
 
-physical_devices = tf.config.experimental.list_physical_devices('GPU')
-if len(physical_devices) > 0:
-    tf.config.experimental.set_memory_growth(physical_devices[0], True)
-
-
-
 class YOLOV4:
     """
     Method yolov4_detect is default

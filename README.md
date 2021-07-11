@@ -18,7 +18,7 @@ architectures. That is where QuickAI came in. It allows for easy experimentation
 
 ### Dependencies:
 
-Tensorflow, PyTorch, Sklearn, Matplotlib, Numpy, and Hugging Face Transformers. You should install TensorFlow and PyTorch following the instructions from their respective websites. 
+Tensorflow, PyTorch, Sklearn, Matplotlib, Numpy, and Hugging Face Transformers. You should install TensorFlow and PyTorch following the instructions from their respective websites.
 
 ### Why you should use QuickAI
 
@@ -30,37 +30,38 @@ all of these steps happens automatically with just 1-2 lines of code.
 ### The following models are currently supported:
 
 1. #### Image Classification
-    * EfficientNet B0-B7
-    * VGG16
-    * VGG19
-    * DenseNet121
-    * DenseNet169
-    * DenseNet201
-    * Inception ResNet V2
-    * Inception V3
-    * MobileNet
-    * MobileNet V2
-    * MobileNet V3 Small & Large
-    * ResNet 101
-    * ResNet 101 V2
-    * ResNet 152
-    * ResNet 152 V2
-    * ResNet 50
-    * ResNet 50 V2
-    * Xception
+   - EfficientNet B0-B7
+   - VGG16
+   - VGG19
+   - DenseNet121
+   - DenseNet169
+   - DenseNet201
+   - Inception ResNet V2
+   - Inception V3
+   - MobileNet
+   - MobileNet V2
+   - MobileNet V3 Small & Large
+   - ResNet 101
+   - ResNet 101 V2
+   - ResNet 152
+   - ResNet 152 V2
+   - ResNet 50
+   - ResNet 50 V2
+   - Xception
 2. #### Natural Language Processing
-    * GPT-NEO 125M(Generation, Inference)
-    * GPT-NEO 350M(Generation, Inference)
-    * GPT-NEO 1.3B(Generation, Inference)
-    * GPT-NEO 2.7B(Generation, Inference)
-    * Distill BERT Cased(Q&A, Inference and Fine Tuning)
-    * Distill BERT Uncased(Named Entity Recognition, Inference)
-    * Distil BART (Summarization, Inference)
-    * Distill BERT Uncased(Sentiment Analysis & Text/Token Classification, Inference and Fine Tuning)
+
+   - GPT-NEO 125M(Generation, Inference)
+   - GPT-NEO 350M(Generation, Inference)
+   - GPT-NEO 1.3B(Generation, Inference)
+   - GPT-NEO 2.7B(Generation, Inference)
+   - Distill BERT Cased(Q&A, Inference and Fine Tuning)
+   - Distill BERT Uncased(Named Entity Recognition, Inference)
+   - Distil BART (Summarization, Inference)
+   - Distill BERT Uncased(Sentiment Analysis & Text/Token Classification, Inference and Fine Tuning)
 
 3. #### Object Detection
-    * YOLOV4
-    * YOLOV4 Tiny
+   - YOLOV4
+   - YOLOV4 Tiny
 
 ### Installation
 
@@ -68,12 +69,12 @@ all of these steps happens automatically with just 1-2 lines of code.
 
 ### How to use
 
-Please see the examples folder for details. For the YOLOV4, you can download weights from [here](https://github.com/geekjr/quickai/releases/download/1.3.0/checkpoints.zip)
+Please see the examples folder for details. For the YOLOV4, you can download weights from [here](https://github.com/geekjr/quickai/releases/download/1.3.0/checkpoints.zip). Full documentation is in the wiki section of the repo.
 
 ### Issues/Questions
 
-If you encounter any bugs, please open a new issue so they can be corrected. If you have general questions, please use the discussion section. 
-
+If you encounter any bugs, please open a new issue so they can be corrected. If you have general questions, please use the discussion section.
 
 ### Credits
+
 Most of the code for the YOLO implementation was taken from "The AI Guy's" [tensorflow-yolov4-tflite](https://github.com/theAIGuysCode/tensorflow-yolov4-tflite) repo. Without this, the YOLO implementation would not be possible. Thank you!
