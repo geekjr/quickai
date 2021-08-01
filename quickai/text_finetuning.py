@@ -41,7 +41,7 @@ def encode_tags(tags, encodings, tag2id):
         arr_offset = np.array(doc_offset)
 
         doc_enc_labels[(arr_offset[:, 0] == 0) & (
-                arr_offset[:, 1] != 0)] = doc_labels
+            arr_offset[:, 1] != 0)] = doc_labels
         encoded_labels.append(doc_enc_labels.tolist())
 
     return encoded_labels
