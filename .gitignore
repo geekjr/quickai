@@ -145,3 +145,6 @@ test/
 .vscode/
 
 checkpoints/
+data/
+cfg/
+*.conv.137
