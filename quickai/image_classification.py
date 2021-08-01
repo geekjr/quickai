@@ -88,32 +88,32 @@ class ImageClassification:
         self.use()
         """
 
-        modeldata = {"eb0":      [tf.keras.applications.EfficientNetB0,    224],
-                     "eb1":      [tf.keras.applications.EfficientNetB1,    240],
-                     "eb2":      [tf.keras.applications.EfficientNetB2,    260],
-                     "eb3":      [tf.keras.applications.EfficientNetB3,    300],
-                     "eb4":      [tf.keras.applications.EfficientNetB4,    340],
-                     "eb5":      [tf.keras.applications.EfficientNetB5,    456],
-                     "eb6":      [tf.keras.applications.EfficientNetB6,    528],
-                     "eb7":      [tf.keras.applications.EfficientNetB7,    600],
-                     "vgg16":    [tf.keras.applications.VGG16,             224],
-                     "vgg19":    [tf.keras.applications.VGG19,             224],
-                     "dn121":    [tf.keras.applications.DenseNet121,       224],
-                     "dn169":    [tf.keras.applications.DenseNet169,       224],
-                     "dn201":    [tf.keras.applications.DenseNet201,       224],
-                     "irnv2":    [tf.keras.applications.InceptionResNetV2, 299],
-                     "iv3":      [tf.keras.applications.InceptionV3,       299],
-                     "mn":       [tf.keras.applications.MobileNet,         224],
-                     "mnv2":     [tf.keras.applications.MobileNetV2,       224],
-                     "mnv3l":    [tf.keras.applications.MobileNetV3Large,  224],
-                     "mnv3s":    [tf.keras.applications.MobileNetV3Small,  224],
-                     "rn101":    [tf.keras.applications.ResNet101,         224],
-                     "rn101v2":  [tf.keras.applications.ResNet101V2,       224],
-                     "rn152":    [tf.keras.applications.ResNet152,         224],
-                     "rn152v2":  [tf.keras.applications.ResNet152V2,       224],
-                     "rn50":     [tf.keras.applications.ResNet50,          224],
-                     "rn50v2":   [tf.keras.applications.ResNet50V2,        224],
-                     "xception": [tf.keras.applications.Xception,          299]}
+        modeldata = {"eb0": [tf.keras.applications.EfficientNetB0, 224],
+                     "eb1": [tf.keras.applications.EfficientNetB1, 240],
+                     "eb2": [tf.keras.applications.EfficientNetB2, 260],
+                     "eb3": [tf.keras.applications.EfficientNetB3, 300],
+                     "eb4": [tf.keras.applications.EfficientNetB4, 340],
+                     "eb5": [tf.keras.applications.EfficientNetB5, 456],
+                     "eb6": [tf.keras.applications.EfficientNetB6, 528],
+                     "eb7": [tf.keras.applications.EfficientNetB7, 600],
+                     "vgg16": [tf.keras.applications.VGG16, 224],
+                     "vgg19": [tf.keras.applications.VGG19, 224],
+                     "dn121": [tf.keras.applications.DenseNet121, 224],
+                     "dn169": [tf.keras.applications.DenseNet169, 224],
+                     "dn201": [tf.keras.applications.DenseNet201, 224],
+                     "irnv2": [tf.keras.applications.InceptionResNetV2, 299],
+                     "iv3": [tf.keras.applications.InceptionV3, 299],
+                     "mn": [tf.keras.applications.MobileNet, 224],
+                     "mnv2": [tf.keras.applications.MobileNetV2, 224],
+                     "mnv3l": [tf.keras.applications.MobileNetV3Large, 224],
+                     "mnv3s": [tf.keras.applications.MobileNetV3Small, 224],
+                     "rn101": [tf.keras.applications.ResNet101, 224],
+                     "rn101v2": [tf.keras.applications.ResNet101V2, 224],
+                     "rn152": [tf.keras.applications.ResNet152, 224],
+                     "rn152v2": [tf.keras.applications.ResNet152V2, 224],
+                     "rn50": [tf.keras.applications.ResNet50, 224],
+                     "rn50v2": [tf.keras.applications.ResNet50V2, 224],
+                     "xception": [tf.keras.applications.Xception, 299]}
 
         img_size = modeldata[self.model][1]
         train, val, class_num = self.load_img_data(
@@ -167,7 +167,7 @@ class ImageClassification:
 
         if self.save_ios:
             image_input = ct.ImageType(shape=(1, 224, 224, 3,),
-                                       bias=[-1, -1, -1], scale=1/127)
+                                       bias=[-1, -1, -1], scale=1 / 127)
 
             classifier_config = ct.ClassifierConfig(self.class_names)
 

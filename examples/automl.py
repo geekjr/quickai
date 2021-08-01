@@ -33,4 +33,9 @@ models = [
     "xception"]
 
 for model in models:
-    ImageClassification(model, "./train", f"cars{model}", epochs=1, graph=False)
+    ImageClassification(
+        model,
+        "./train",
+        f"cars{model}",
+        epochs=1,
+        graph=False)

@@ -68,10 +68,15 @@ def summarization(text, length_max, length_min):
 
 
 def classification_ft(path, classes):
-    model = AutoModelForSequenceClassification.from_pretrained(path, from_tf=True)
+    model = AutoModelForSequenceClassification.from_pretrained(
+        path, from_tf=True)
     tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')
-    classifier = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
+    classifier = pipeline(
+        'sentiment-analysis',
+        model=model,
+        tokenizer=tokenizer)
 
     result = classifier("I love this movie")[0]
     out_class = result['label'].replace('LABEL_', '')
-    return [result['label'], round(result['score'], 4), classes[int(out_class)]]
+    return [result['label'], round(
+        result['score'], 4), classes[int(out_class)]]

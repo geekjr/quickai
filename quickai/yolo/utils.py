@@ -62,7 +62,8 @@ def load_weights(model, weights_file, model_name='yolov4', is_tiny=False):
 
         # darknet shape (out_dim, in_dim, height, width)
         conv_shape = (filters, in_dim, k_size, k_size)
-        conv_weights = np.fromfile(wf, dtype=np.float32, count=np.product(conv_shape))
+        conv_weights = np.fromfile(
+            wf, dtype=np.float32, count=np.product(conv_shape))
         # tf shape (height, width, in_dim, out_dim)
         conv_weights = conv_weights.reshape(conv_shape).transpose([2, 3, 1, 0])
 
@@ -131,13 +132,19 @@ def image_preprocess(image, target_size, gt_boxes=None):
         return image_paded, gt_boxes
 
 
-def draw_bbox(image, bboxes, classes=read_class_names(YOLO_CLASSES),
-              allowed_classes=list(read_class_names(YOLO_CLASSES).values()), show_label=True):
+def draw_bbox(
+        image,
+        bboxes,
+        classes=read_class_names(YOLO_CLASSES),
+        allowed_classes=list(
+            read_class_names(YOLO_CLASSES).values()),
+        show_label=True):
     num_classes = len(classes)
     image_h, image_w, _ = image.shape
     hsv_tuples = [(1.0 * x / num_classes, 1., 1.) for x in range(num_classes)]
     colors = list(map(lambda x: colorsys.hsv_to_rgb(*x), hsv_tuples))
-    colors = list(map(lambda x: (int(x[0] * 255), int(x[1] * 255), int(x[2] * 255)), colors))
+    colors = list(
+        map(lambda x: (int(x[0] * 255), int(x[1] * 255), int(x[2] * 255)), colors))
 
     random.seed(0)
     random.shuffle(colors)
@@ -145,7 +152,8 @@ def draw_bbox(image, bboxes, classes=read_class_names(YOLO_CLASSES),
 
     out_boxes, out_scores, out_classes, num_boxes = bboxes
     for i in range(num_boxes[0]):
-        if int(out_classes[0][i]) < 0 or int(out_classes[0][i]) > num_classes: continue
+        if int(out_classes[0][i]) < 0 or int(out_classes[0][i]) > num_classes:
+            continue
         coor = out_boxes[0][i]
         coor[0] = int(coor[0] * image_h)
         coor[2] = int(coor[2] * image_h)
@@ -170,12 +178,27 @@ def draw_bbox(image, bboxes, classes=read_class_names(YOLO_CLASSES),
 
             if show_label:
                 bbox_mess = '%s: %.2f' % (classes[class_ind], score)
-                t_size = cv2.getTextSize(bbox_mess, 0, fontScale, thickness=bbox_thick // 2)[0]
+                t_size = cv2.getTextSize(
+                    bbox_mess, 0, fontScale, thickness=bbox_thick // 2)[0]
                 c3 = (c1[0] + t_size[0], c1[1] - t_size[1] - 3)
-                cv2.rectangle(image, c1, (int(np.float32(c3[0])), int(np.float32(c3[1]))), bbox_color, -1)# filled
+                cv2.rectangle(
+                    image, c1, (int(
+                        np.float32(
+                            c3[0])), int(
+                        np.float32(
+                            c3[1]))), bbox_color, -1)  # filled
 
-                cv2.putText(image, bbox_mess, (c1[0], int(np.float32(c1[1] - 2))), cv2.FONT_HERSHEY_SIMPLEX,
-                        fontScale, (0, 0, 0), bbox_thick // 2, lineType=cv2.LINE_AA)
+                cv2.putText(image,
+                            bbox_mess,
+                            (c1[0],
+                             int(np.float32(c1[1] - 2))),
+                            cv2.FONT_HERSHEY_SIMPLEX,
+                            fontScale,
+                            (0,
+                                0,
+                                0),
+                            bbox_thick // 2,
+                            lineType=cv2.LINE_AA)
     return image
 
 
@@ -324,17 +347,17 @@ def bbox_ciou(bboxes1, bboxes2):
     diou = iou - tf.math.divide_no_nan(rho_2, c_2)
 
     v = (
-                (
-                        tf.math.atan(
-                            tf.math.divide_no_nan(bboxes1[..., 2], bboxes1[..., 3])
-                        )
-                        - tf.math.atan(
-                    tf.math.divide_no_nan(bboxes2[..., 2], bboxes2[..., 3])
-                )
-                )
-                * 2
-                / np.pi
-        ) ** 2
+        (
+            tf.math.atan(
+                tf.math.divide_no_nan(bboxes1[..., 2], bboxes1[..., 3])
+            )
+            - tf.math.atan(
+                tf.math.divide_no_nan(bboxes2[..., 2], bboxes2[..., 3])
+            )
+        )
+        * 2
+        / np.pi
+    ) ** 2
 
     alpha = tf.math.divide_no_nan(v, 1 - iou + v)
 
@@ -361,7 +384,8 @@ def nms(bboxes, iou_threshold, sigma=0.3, method='nms'):
             max_ind = np.argmax(cls_bboxes[:, 4])
             best_bbox = cls_bboxes[max_ind]
             best_bboxes.append(best_bbox)
-            cls_bboxes = np.concatenate([cls_bboxes[: max_ind], cls_bboxes[max_ind + 1:]])
+            cls_bboxes = np.concatenate(
+                [cls_bboxes[: max_ind], cls_bboxes[max_ind + 1:]])
             iou = bbox_iou(best_bbox[np.newaxis, :4], cls_bboxes[:, :4])
             weight = np.ones((len(iou),), dtype=np.float32)
 
