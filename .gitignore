@@ -149,3 +149,5 @@ data/
 cfg/
 *.conv.137
 coco.names
+*.h5
+*.mlmodel
