@@ -27,7 +27,7 @@ setuptools.setup(
         'scikit-learn',
         'numpy',
         'matplotlib',
-        'transformers'
+        'transformers',
         'coremltools',
     ]
 )

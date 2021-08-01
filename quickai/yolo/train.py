@@ -1,9 +1,7 @@
-from darknet_invoke import darknet
-from generate_train import generate_train
-from generate_test import generate_test
+import os
 
 
-class YOLOV4Train:
+class YOLOV4_Train:
     def __init__(
             self,
             train_data_path="data/obj/",
@@ -19,13 +17,51 @@ class YOLOV4Train:
         self.weights = weights
         self.train()
 
+    def darknet(self, term):
+        """[a function to invoke the darknet command]
+
+        Args:
+            term ([string]): [the command that needs to be executed after the darknet invocation]
+        """
+        command = f"darknet {term}"
+
+        os.system(command)
+
+    def generate_train(self, path):
+        image_files = []
+        os.chdir(os.path.join("data", "obj"))
+        for filename in os.listdir(os.getcwd()):
+            if filename.endswith(".jpg"):
+                image_files.append(path + filename)
+        os.chdir("..")
+        with open("train.txt", "w") as outfile:
+            for image in image_files:
+                outfile.write(image)
+                outfile.write("\n")
+            outfile.close()
+        os.chdir("..")
+
+    def generate_test(self, path):
+        image_files = []
+        os.chdir(os.path.join("data", "test"))
+        for filename in os.listdir(os.getcwd()):
+            if filename.endswith(".jpg"):
+                image_files.append(path + filename)
+        os.chdir("..")
+        with open("test.txt", "w") as outfile:
+            for image in image_files:
+                outfile.write(image)
+                outfile.write("\n")
+            outfile.close()
+        os.chdir("..")
+
     def train(self):
         print("[INFO] Staring train.txt generation")
-        generate_train(self.train_data_path)
+        self.generate_train(self.train_data_path)
         print("[INFO] Finished train.txt generation")
         print("[INFO] Staring test.txt generation")
-        generate_test(self.test_data_path)
+        self.generate_test(self.test_data_path)
         print("[INFO] Finished test.txt generation")
         print("[INFO] Staring training")
-        darknet(
+        self.darknet(
             f"detector train {self.data_file} {self.cfg_file} {self.weights} -dont_show -map")

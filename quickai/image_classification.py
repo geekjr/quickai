@@ -41,6 +41,7 @@ class ImageClassification:
 
     @staticmethod
     def load_img_data(
+            self,
             path,
             img_height,
             img_width,
@@ -73,7 +74,8 @@ class ImageClassification:
             batch_size=batch_size,
             color_mode=color_mode
         )
-        self.class_names = train_ds.class_names
+        class_names = train_ds.class_names
+        self.class_names = class_names
         print(class_names)
         autotune = tf.data.experimental.AUTOTUNE
         train_ds = train_ds.cache().shuffle(1000).prefetch(buffer_size=autotune)
@@ -115,7 +117,7 @@ class ImageClassification:
 
         img_size = modeldata[self.model][1]
         train, val, class_num = self.load_img_data(
-            self.path, img_size, img_size, self.batch_size)
+            self, self.path, img_size, img_size, self.batch_size)
         body = modeldata[self.model][0](input_shape=(img_size, img_size, 3),
                                         include_top=False,
                                         weights="imagenet")
@@ -164,9 +166,11 @@ class ImageClassification:
         model.save(f"{self.save}.h5")
 
         if self.save_ios:
-            image_input = ct.ImageType(shape=(1, img_size, img_size, 3),
+            image_input = ct.ImageType(shape=(1, 224, 224, 3,),
                                        bias=[-1, -1, -1], scale=1/127)
+
             classifier_config = ct.ClassifierConfig(self.class_names)
+
             coremlmodel = ct.convert(
                 model, inputs=[
                     image_input], classifier_config=classifier_config,
