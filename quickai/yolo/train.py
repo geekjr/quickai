@@ -1,4 +1,3 @@
-import cv2
 from darknet_invoke import darknet
 from generate_train import generate_train
 from generate_test import generate_test
