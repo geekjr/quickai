@@ -5,7 +5,8 @@
 ## QuickAI is a Python library that makes it extremely easy to experiment with state-of-the-art Machine Learning models.
 
 Announcement video
-https://www.youtube.com/watch?v=kK46sJphjIs
+
+[![Announcement video](https://img.youtube.com/vi/kK46sJphjIs/0.jpg)](https://www.youtube.com/watch?v=kK46sJphjIs)
 
 Demo https://deepnote.com/project/QuickAI-1r_4zvlyQMa2USJrIvB-kA/%2Fnotebook.ipynb
 
