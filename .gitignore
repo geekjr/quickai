@@ -151,3 +151,4 @@ cfg/
 coco.names
 *.h5
 *.mlmodel
+backup/
