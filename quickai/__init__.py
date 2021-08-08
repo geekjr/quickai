@@ -7,4 +7,4 @@ from .text_inferance import gpt_neo, q_and_a, sentiment_analysis, ner, summariza
 from .text_finetuning import TextFineTuning
 from .yolo.train import YOLOV4_Train
 from .yolo.detect import YOLOV4
-from yolo.detect_custom import YOLOV4_Custom
+from .yolo.detect_custom import YOLOV4_Custom
