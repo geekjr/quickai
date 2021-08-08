@@ -11,8 +11,6 @@ class YOLOV4_Custom:
             image=None,
             weights="./yolov4.weights"):
 
-        self.train_data_path = train_data_path
-        self.test_data_path = test_data_path
         self.data_file = data_file
         self.cfg_file = cfg_file
         self.weights = weights
