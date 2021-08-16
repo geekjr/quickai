@@ -21,6 +21,18 @@ architectures. That is where QuickAI came in. It allows for easy experimentation
 
 Tensorflow, PyTorch, Sklearn, Matplotlib, Numpy, and Hugging Face Transformers. You should install TensorFlow and PyTorch following the instructions from their respective websites.
 
+### Docker container:
+
+To avoid setting up all the dependencies above, you can use the QuickAI [Docker Container](https://hub.docker.com/r/geekjr/quickai):
+
+First pull the container:
+`docker pull geekjr/quickai`
+Then run it
+CPU(on an Apple silicon Mac, you will need the `--platform linux/amd64` flag and Rosetta 2 installed):
+`docker run -it ufoym/deepo:cpu bash`
+GPU:
+`docker run --gpus all -it ufoym/deepo bash`
+
 ### Why you should use QuickAI
 
 QuickAI can reduce what would take tens of lines of code into 1-2 lines. This makes fast experimentation very easy and
