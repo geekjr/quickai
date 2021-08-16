@@ -27,10 +27,13 @@ To avoid setting up all the dependencies above, you can use the QuickAI [Docker 
 
 First pull the container:
 `docker pull geekjr/quickai`
-Then run it
-CPU(on an Apple silicon Mac, you will need the `--platform linux/amd64` flag and Rosetta 2 installed):
+
+Then run it:
+
+* CPU(on an Apple silicon Mac, you will need the `--platform linux/amd64` flag and Rosetta 2 installed):
 `docker run -it ufoym/deepo:cpu bash`
-GPU:
+
+* GPU:
 `docker run --gpus all -it ufoym/deepo bash`
 
 ### Why you should use QuickAI
