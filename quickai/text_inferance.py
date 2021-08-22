@@ -2,7 +2,7 @@
 from quickai import gpt_neo, sentiment_analysis, q_and_a, ner, summarization, classification_fts
 """
 
-from transformers import GPTNeoForCausalLM, GPT2Tokenizer, pipeline, AutoTokenizer, AutoModelForSequenceClassification
+from transformers import GPTNeoForCausalLM, GPT2Tokenizer, pipeline, AutoTokenizer, AutoModelForSequenceClassification, AutoModelForCausalLM
 
 
 def gpt_neo(prompt, model, max_length=100, temp=0.9):
@@ -20,6 +20,22 @@ def gpt_neo(prompt, model, max_length=100, temp=0.9):
         tokenizer = GPT2Tokenizer.from_pretrained("EleutherAI/gpt-neo-350M")
     else:
         print("That is not a valid model")
+
+    input_ids = tokenizer(prompt, return_tensors="pt").input_ids
+
+    gen_tokens = model.generate(
+        input_ids,
+        do_sample=True,
+        temperature=temp,
+        max_length=max_length)
+    gen_text = tokenizer.batch_decode(gen_tokens)[0]
+
+    return gen_text
+
+
+def gpt_j(prompt, max_length=100, temp=0.9):
+    tokenizer = AutoTokenizer.from_pretrained("gpt2")
+    model = AutoModelForCausalLM.from_pretrained("gpt-j-6B")
 
     input_ids = tokenizer(prompt, return_tensors="pt").input_ids
 
