@@ -4,6 +4,8 @@
 
 ## QuickAI is a Python library that makes it extremely easy to experiment with state-of-the-art Machine Learning models.
 
+# Note: Even if you are not using YOLO, you will still need a file in your curent working directory called coco.names. If you are not using YOLO, this file can be empty. 
+
 Announcement video
 
 [![Announcement video](https://img.youtube.com/vi/kK46sJphjIs/0.jpg)](https://www.youtube.com/watch?v=kK46sJphjIs)
