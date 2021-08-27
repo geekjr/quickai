@@ -72,6 +72,7 @@ all of these steps happens automatically with just 1-2 lines of code.
    - GPT-NEO 350M(Generation, Inference)
    - GPT-NEO 1.3B(Generation, Inference)
    - GPT-NEO 2.7B(Generation, Inference)
+   - GPT-J 6B(Generation, Inference)-BETA
    - Distill BERT Cased(Q&A, Inference and Fine Tuning)
    - Distill BERT Uncased(Named Entity Recognition, Inference)
    - Distil BART (Summarization, Inference)
