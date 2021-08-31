@@ -152,3 +152,5 @@ coco.names
 *.h5
 *.mlmodel
 backup/
+
+.DS_Store
