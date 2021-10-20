@@ -28,6 +28,9 @@ class ImageClassification:
             data_augmentation=False,
             epochs=20,
             graph=True,
+            tflite=False,
+            tflite_16=False,
+            tflite_quant=False,
             save_ios=False):
         self.model = model.lower()
         self.save = save
@@ -37,6 +40,9 @@ class ImageClassification:
         self.epochs = epochs
         self.graph = graph
         self.save_ios = save_ios
+        self.tflite = tflite
+        self.tflite_16 = tflite_16
+        self.tflite_quant = tflite_quant
         self.use()
 
     @staticmethod
@@ -177,6 +183,24 @@ class ImageClassification:
             )
 
             coremlmodel.save(f"{self.save}.mlmodel")
+
+        if self.tflite:
+            converter = tf.lite.TFLiteConverter.from_keras_model(model)
+            tflite_model = converter.convert()
+            open(f"{self.save}.tflite", "wb").write(tflite_model)
+
+        if self.tflite_16:
+            converter = tf.lite.TFLiteConverter.from_keras_model(model)
+            converter.optimizations = [tf.lite.Optimize.DEFAULT]
+            converter.target_spec.supported_types = [tf.float16]
+            tflite_model = converter.convert()
+            open(f"{self.save}_16.tflite", "wb").write(tflite_model)
+
+        if self.tflite:
+            converter = tf.lite.TFLiteConverter.from_keras_model(model)
+            converter.optimizations = [tf.lite.Optimize.OPTIMIZE_FOR_SIZE]
+            tflite_model = converter.convert()
+            open(f"{self.save}_QUANT.tflite", "wb").write(tflite_model)
 
 
 class ImageClassificationPredictor:
