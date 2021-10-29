@@ -1,0 +1,17 @@
+# YAML 1.2
+---
+authors:
+  - affiliation: Home
+    family-names: geekjr
+    given-names: geekjr
+cff-version: "1.0.0"
+keywords:
+  - Transformers
+  - Image Classification
+  - "Object Detection"
+license: "MIT"
+message: "If you use this software, please cite it using this metadata."
+repository-code: "https://github.com/geekjr/quickai"
+title: "QuickAI: Python library for easy experimentation with AI models"
+version: "2.0.0"
+date-released: 2021-08-21
