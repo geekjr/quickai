@@ -4,6 +4,17 @@
 
 ## QuickAI is a Python library that makes it extremely easy to experiment with state-of-the-art Machine Learning models.
 
+<table>
+	<tr>
+		<td align="center">PyPI Counter</td>
+		<td align="center"><a href="http://pepy.tech/project/quickai"><img src="http://pepy.tech/badge/quickai"></a></td>
+	</tr>
+	<tr>
+		<td align="center">Github Stars</td>
+		<td align="center"><a href="https://github.com/geekjr/quickai"><img src="https://img.shields.io/github/stars/geekjr/quickai.svg?style=social&label=Stars"></a></td>
+	</tr>
+</table>
+
 ### Note: Even if you are not using YOLO, you will still need a file in your curent working directory called coco.names. If you are not using YOLO, this file can be empty.  
 
 Announcement video
