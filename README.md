@@ -11,11 +11,11 @@
 	</tr>
 	<tr>
 		<td align="center">PyPI Counter</td>
-		<td align="center"><a href="http://pepy.tech/project/quickai/month"><img src="http://pepy.tech/badge/quickai"></a></td>
+		<td align="center"><a href="http://pepy.tech/project/quickai/month"><img src="http://pepy.tech/badge/quickai/month"></a></td>
 	</tr>
 	<tr>
 		<td align="center">PyPI Counter</td>
-		<td align="center"><a href="http://pepy.tech/project/quickai/week"><img src="http://pepy.tech/badge/quickai"></a></td>
+		<td align="center"><a href="http://pepy.tech/project/quickai/week"><img src="http://pepy.tech/badge/quickai/week"></a></td>
 	</tr>
 	<tr>
 		<td align="center">Github Stars</td>
