@@ -2,7 +2,7 @@ tensorflow
 torch
 torchvision
 git+https://github.com/huggingface/transformers
-numpy~=1.22.0
+numpy~=1.22.0rc1
 scikit-learn~=0.24.1
 matplotlib~=3.4.1
 coremltools
