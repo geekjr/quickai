@@ -52,10 +52,10 @@ First pull the container:
 Then run it:
 
 * CPU(on an Apple silicon Mac, you will need the `--platform linux/amd64` flag and Rosetta 2 installed):
-`docker run -it ufoym/deepo:cpu bash`
+`docker run -it geekjr/quickai bash`
 
 * GPU:
-`docker run --gpus all -it ufoym/deepo bash`
+`docker run --gpus all -it geekjr/quickai bash`
 
 ### Why you should use QuickAI
 
