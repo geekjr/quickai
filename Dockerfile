@@ -7,7 +7,7 @@
 # tensorflow    latest (pip)
 # ==================================================================
 
-FROM ubuntu:jammy
+FROM ubuntu:22.10
 ENV LANG C.UTF-8
 RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     PIP_INSTALL="python -m pip --no-cache-dir install --upgrade" && \
