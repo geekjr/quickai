@@ -2,7 +2,7 @@ torch
 torchvision
 git+https://github.com/huggingface/transformers
 numpy~=1.22.0rc1
-scikit-learn~=0.24.1
+scikit-learn~=1.5.0
 matplotlib~=3.4.1
 coremltools
 pillow>=8.3.2 # not directly required, pinned by Snyk to avoid a vulnerability
