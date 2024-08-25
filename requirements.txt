@@ -1,12 +1,14 @@
 torch
 torchvision
 git+https://github.com/huggingface/transformers
-numpy~=1.22.0rc1
+numpy~=1.22.2
 scikit-learn~=1.5.0
 matplotlib~=3.4.1
 coremltools
 pillow>=10.3.0 # not directly required, pinned by Snyk to avoid a vulnerability
 protobuf>=3.20.2 # not directly required, pinned by Snyk to avoid a vulnerability
 wheel>=0.38.0 # not directly required, pinned by Snyk to avoid a vulnerability
-setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
 requests>=2.32.0 # not directly required, pinned by Snyk to avoid a vulnerability
+sympy>=1.12 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
